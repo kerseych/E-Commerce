@@ -6,6 +6,10 @@
   font-family: "Roboto", sans-serif;
 }
 
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
 nav {
   height: 80px;
   display: flex;
@@ -118,6 +122,7 @@ button:active {
 
 .header__img--wrapper {
   padding: 20px;
+  z-index: 2;
 }
 
 img {
@@ -139,35 +144,35 @@ img {
 
 /*
 Highlights
-*/
+*/ 
 
-#highlights:before {
-  /* background: url(assets/wave.svg);
-content: "";
-position: absolute;
-top: 1px;
-left: 0;
-transform: translateY(-100%);
-width: 101vw;
-height: 12vw;
-background-size: cover;
-background-repeat: no-repeat;
-z-index: -1;
-} */
+#highlights {
+  position: relative;
 }
 
-#highlights:before {
+
+#highlights:before,
+#highlights::after {
   background: url('assets/wave.svg');
   content: "";
   position: absolute;
-  top: 1px;
-  left: 0;
   width: 101vw;
   height: 12vw;
+  left: 0;
   z-index: 1;
   background-size: cover;
   background-repeat: no-repeat;
+
+}
+
+#highlights:before {
   transform: translateY(-100%);
+  top: 1px;
+}
+
+#highlights:after{
+  transform: translateY(100%) rotate(180deg);
+  bottom: 1px;
 }
 
 .highlight__wrapper {
@@ -205,3 +210,68 @@ z-index: -1;
   font-size: 20px;
   margin-bottom: 16px;
 }
+
+/* 
+
+FEATURES 
+
+*/
+
+#features {
+  padding: 8vw;
+  background-color: rgba(115, 66, 214, 0.1);
+}
+
+.books {
+  display: flex;
+  align-items: start;
+}
+
+.book {
+  width: 25%;
+}
+.book__img {
+  max-height: 380px;
+  transition: all 300ms ease;
+  cursor: no-drop;
+}
+
+.book__img--wrapper {
+  margin-bottom: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+}
+
+.book:hover .book__img {
+  transform: scale(1.03);
+}
+
+.book__title {
+  font-size: 20px;
+  margin-bottom: 8px;
+  padding-left: 16px;
+}
+
+.book__title:hover {
+  text-decoration: underline;
+  cursor: not-allowed;
+}
+
+.book__ratings {
+  margin-bottom: 8px;
+  color: #fabf2a;
+  padding-left: 16px;}
+
+.book__price--normal {
+  text-decoration: line-through;
+  padding-right: 6%;
+  color: grey;
+}
+
+.book__price {
+  padding-left: 16px;
+}
+
+/*Latest*/
+
