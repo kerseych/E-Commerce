@@ -273,5 +273,43 @@ FEATURES
   padding-left: 16px;
 }
 
-/*Latest*/
+/*
 
+Recent
+
+*/
+
+#recent {
+  padding: 8vw;
+}
+
+.books {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.book {
+  width: 25%;
+}
+
+.book__title--recent {
+  font-size: 20px;
+  margin-bottom: 8px;
+  padding-left: 16px;
+}
+
+/*
+
+Explore
+
+*/
+
+#explore {
+  background-color: rgba(115, 66, 214, 0.1);
+}
+
+.row__explore {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
